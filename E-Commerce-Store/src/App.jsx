@@ -7,7 +7,7 @@ import Aboutus from "./Pages/Aboutus";
 import Products from "./Pages/Products";
 import ProductDetails from "./Pages/ProductDetails";
 import Categories from "./Pages/Categories";
-import Card from "./Pages/Card";
+import Cart from "./Pages/Cart";
 import Checkout from "./Pages/Checkout";
 
 export default function App() {
@@ -41,7 +41,7 @@ export default function App() {
           />
 
           {/* Cart */}
-          <Route path="/cart" element={<Card />} />
+          <Route path="/cart" element={<Cart />} />
 
           {/* Checkout */}
           <Route path="/checkout" element={<Checkout />} />
