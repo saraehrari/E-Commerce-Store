@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
+  const [showSearch, setShowSearch] = useState(false);
+
   const navClass = ({ isActive }) =>
     `px-3 py-2 rounded-lg text-sm font-medium transition ${
       isActive
@@ -22,7 +25,6 @@ export default function Navbar() {
 
         {/* Links */}
         <div className="hidden items-center gap-2 md:flex">
-
           <NavLink to="/" className={navClass}>
             Home
           </NavLink>
@@ -38,12 +40,31 @@ export default function Navbar() {
           <NavLink to="/categories" className={navClass}>
             Categories
           </NavLink>
-
         </div>
 
         {/* Actions */}
         <div className="flex items-center gap-3">
 
+          {/* Search */}
+          <div className="flex items-center">
+            {showSearch && (
+              <input
+                type="text"
+                autoFocus
+                placeholder="Search products..."
+                className="w-48 rounded-full border border-gray-200 bg-gray-50 px-4 py-2 text-sm outline-none transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
+              />
+            )}
+
+            <button
+              onClick={() => setShowSearch(!showSearch)}
+              className="ml-2 flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-600 transition hover:border-blue-500 hover:bg-blue-50 hover:text-blue-600"
+            >
+              🔍
+            </button>
+          </div>
+
+          {/* Cart */}
           <NavLink
             to="/cart"
             className={({ isActive }) =>
@@ -57,6 +78,7 @@ export default function Navbar() {
             🛒 Cart
           </NavLink>
 
+          {/* Checkout */}
           <NavLink
             to="/checkout"
             className="rounded-full bg-gray-900 px-5 py-2 text-sm font-semibold text-white transition hover:bg-gray-700"
@@ -65,7 +87,6 @@ export default function Navbar() {
           </NavLink>
 
         </div>
-
       </div>
     </nav>
   );
