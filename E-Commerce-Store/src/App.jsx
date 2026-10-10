@@ -33,13 +33,6 @@ export default function App() {
             path="/products/:id"
             element={<ProductDetails />}
           />
-
-          {/* Categories */}
-          <Route
-            path="/categories"
-            element={<Categories />}
-          />
-
           {/* Cart */}
           <Route path="/cart" element={<Cart />} />
 
