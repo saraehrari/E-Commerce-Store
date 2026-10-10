@@ -4,11 +4,8 @@ import heroImage from "../assets/hero image.png";
 
 const API = "https://fakestoreapi.com/products";
 
-export default function Home() {
+export default function Home({ products, error,loading}) {
   const navigate = useNavigate();
-
-  const [products, setProducts] = useState([]);
-  const [error, setError] = useState("");
 
   useEffect(() => {
     const getProducts = async () => {
@@ -96,11 +93,11 @@ export default function Home() {
   )}
 
   {/* Loading State */}
-  {products.length === 0 && !error && (
-    <p className="py-12 text-center text-gray-500">
-      Loading products...
-    </p>
-  )}
+  {loading && (
+  <p className="py-12 text-center text-gray-500">
+    Loading products...
+  </p>
+)}
 
   {/* Products Grid */}
   <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -151,13 +148,12 @@ export default function Home() {
                 ${product.price.toFixed(2)}
               </p>
             </div>
-
             <button
-              onClick={() => navigate(`/Products/${product.id}`)}
-              className="rounded-xl bg-blue-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-blue-700 active:scale-95">
-            
-              View Details
-           </button>
+              onClick={() => navigate(`/products/${product.id}`)}
+                  className="rounded-xl bg-blue-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
+                >
+                  View Details
+              </button>
           </div>
         </div>
       </div>
