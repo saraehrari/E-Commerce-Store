@@ -46,35 +46,26 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
 
           {/* Search */}
-          <div className="flex items-center">
-            {showSearch && (
-              <input
-                type="text"
-                autoFocus
-                placeholder="Search products..."
-                className="w-48 rounded-full border border-gray-200 bg-gray-50 px-4 py-2 text-sm outline-none transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
-              />
-            )}
-
-
-
-               <button
-    onClick={() => setShowSearch(!showSearch)}
-    className="text-xl p-2 hover:bg-gray-100 rounded-full"
-  >
-    🔍
-  </button>
-
+         
+<div className="flex items-center gap-2">
   {showSearch && (
     <input
       type="text"
+      autoFocus
       value={search}
-      placeholder="Search Products"
       onChange={(e) => setSearch(e.target.value)}
-      className="border border-gray-300 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500"
+      placeholder="Search products..."
+      className="w-48 rounded-full border border-gray-200 bg-gray-50 px-4 py-2 text-sm outline-none transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
     />
   )}
-          </div>
+
+  <button
+    onClick={() => setShowSearch(!showSearch)}
+    className="rounded-full p-2 text-xl hover:bg-gray-100"
+  >
+    🔍
+  </button>
+</div>
 
          
 
