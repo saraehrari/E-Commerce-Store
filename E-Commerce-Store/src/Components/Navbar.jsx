@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   const [showSearch, setShowSearch] = useState(false);
-
+  const [search,setSearch] = useState("");
   const navClass = ({ isActive }) =>
     `px-3 py-2 rounded-lg text-sm font-medium transition ${
       isActive
@@ -56,13 +56,27 @@ export default function Navbar() {
               />
             )}
 
-            <button
-              onClick={() => setShowSearch(!showSearch)}
-              className="ml-2 flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-600 transition hover:border-blue-500 hover:bg-blue-50 hover:text-blue-600"
-            >
-              🔍
-            </button>
+
+
+               <button
+    onClick={() => setShowSearch(!showSearch)}
+    className="text-xl p-2 hover:bg-gray-100 rounded-full"
+  >
+    🔍
+  </button>
+
+  {showSearch && (
+    <input
+      type="text"
+      value={search}
+      placeholder="Search Products"
+      onChange={(e) => setSearch(e.target.value)}
+      className="border border-gray-300 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500"
+    />
+  )}
           </div>
+
+         
 
           {/* Cart */}
           <NavLink
