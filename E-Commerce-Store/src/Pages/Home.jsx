@@ -1,34 +1,12 @@
-import { useEffect, useState } from "react";
+
 import { useNavigate } from "react-router-dom";
 import heroImage from "../assets/hero image.png";
 
-const API = "https://fakestoreapi.com/products";
+
 
 export default function Home({ products, error,loading}) {
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const getProducts = async () => {
-      try {
-        const response = await fetch(API);
-
-        if (!response.ok) {
-          throw new Error("Failed to fetch products");
-        }
-
-        const data = await response.json();
-
-        console.log("API DATA:", data);
-
-        setProducts(data);
-      } catch (error) {
-        console.log(error);
-        setError(error.message);
-      }
-    };
-
-    getProducts();
-  }, []);
+   
 
   return (
     <>

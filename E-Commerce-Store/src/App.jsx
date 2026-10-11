@@ -15,6 +15,7 @@ export default function App() {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
+   const [search,setSearch] = useState("");
 
   useEffect(() => {
     async function getProducts() {
@@ -41,7 +42,11 @@ export default function App() {
 
   return (
     <div className="app">
-      <Navbar />
+      <Navbar
+      search={search}
+      setSearch={setSearch}
+      
+      />
 
       <main className="main-content">
         <Routes>
