@@ -1,13 +1,19 @@
 
 import { useNavigate } from "react-router-dom";
 import heroImage from "../assets/hero image.png";
+import Products from "./Products";
 
 
 
-export default function Home({ products, error,loading}) {
+export default function Home({ products, error,loading , search}) {
   const navigate = useNavigate();
-   
+   const filteredProducts = products.filter((product) =>
+  product.title.toLowerCase().includes(search.toLowerCase())
+);
 
+if(!Products){
+  return <p>Products not Found!</p>
+}
   return (
     <>
       {/* Hero */}
@@ -79,7 +85,7 @@ export default function Home({ products, error,loading}) {
 
   {/* Products Grid */}
   <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-    {products.map((product) => (
+    {filteredProducts.map((product) => (
       <div
         key={product.id}
         className="group overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl"

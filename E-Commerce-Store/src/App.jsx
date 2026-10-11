@@ -1,7 +1,5 @@
-
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-
 import Navbar from "./Components/Navbar";
 
 import Home from "./Pages/Home";
@@ -57,6 +55,7 @@ export default function App() {
                 products={products}
                 error={error}
                 loading={loading}
+                search={search}
               />
             }
           />

@@ -1,9 +1,10 @@
+
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar({search, setSearch}) {
   const [showSearch, setShowSearch] = useState(false);
-  const [search,setSearch] = useState("");
+  
   const navClass = ({ isActive }) =>
     `px-3 py-2 rounded-lg text-sm font-medium transition ${
       isActive
