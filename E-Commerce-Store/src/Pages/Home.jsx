@@ -1,8 +1,7 @@
 
 import { useNavigate } from "react-router-dom";
 import heroImage from "../assets/hero image.png";
-
-
+import Cards from "../Components/Cards";
 
 export default function Home({ products, error, loading, search }) {
   const navigate = useNavigate();
@@ -13,9 +12,6 @@ export default function Home({ products, error, loading, search }) {
     )
     .slice(0, 8);
   
-
-
-
 
   return (
     <>
@@ -28,8 +24,6 @@ export default function Home({ products, error, loading, search }) {
         />
 
         <div className="absolute inset-0 bg-black/40"></div>
-
-
 
         <div className="relative z-10 flex h-full items-center px-10 md:px-16">
           <div className="max-w-xl text-white">
@@ -148,6 +142,64 @@ export default function Home({ products, error, loading, search }) {
       </div>
     ))}
   </div>
+
+  <section className="bg-gray-50 px-6 py-20 sm:px-10 lg:px-16">
+  <div className="mx-auto max-w-7xl">
+
+    <div className="mb-14 text-center">
+      <span className="inline-block rounded-full bg-blue-100 px-4 py-2 text-sm font-bold uppercase tracking-wider text-blue-600">
+        The ShopHub Advantage
+      </span>
+
+      <h2 className="mt-5 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+        Why Choose Us?
+      </h2>
+
+      <p className="mx-auto mt-4 max-w-xl leading-7 text-gray-500">
+        We bring together quality, convenience, and care
+        to make every shopping experience better.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+      <Cards
+        icon="🚚"
+        title="Fast Delivery"
+        para="Your favorite finds, delivered right to your door."
+        color="bg-blue-100"
+      />
+
+      <Cards
+        icon="🔒"
+        title="Secure Shopping"
+        para="Shop confidently with a safe, reliable experience."
+        color="bg-emerald-100"
+      />
+
+      <Cards
+        icon="💎"
+        title="Quality Products"
+        para="Discover carefully selected products for everyday life."
+        color="bg-amber-100"
+      />
+
+      <Cards
+        icon="💬"
+        title="Friendly Support"
+        para="We're here to help whenever you need us."
+        color="bg-purple-100"
+      />
+
+    </div>
+  </div>
+
+  
+
+    
+     
+
+</section>
 </section>
 </>
   )}

@@ -1,8 +1,12 @@
-export default function Cart() {
-    return (
+
+
+
+export default function Cart({ Cart, setCart }) {
+    return(
         <div>
-            <h1>Shopping Cart</h1>
-            <p>This is the shopping cart page.</p>
+            <h1>
+                Cart page
+            </h1>
         </div>
     )
 }

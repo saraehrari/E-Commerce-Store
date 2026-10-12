@@ -1,6 +1,8 @@
 import { useNavigate, useParams } from "react-router-dom";
+import Cards from "../Components/Cards";
+import Cart from "./Cart";
 
-export default function ProductDetails({ products, loading }) {
+export default function ProductDetails({ products, loading,cart, setCart }) {
   const { id } = useParams();
 const navigate = useNavigate();
   if (loading) {
@@ -58,10 +60,25 @@ const navigate = useNavigate();
 
          <button
         onClick={() => navigate("/")}
-        className="mt-6 rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700"
+        className="flex-1 rounded-xl border border-gray-300
+    bg-white px-4 py-3 font-semibold text-gray-700
+    transition hover:bg-gray-100 mb-4"
 >
   ← Back to Products
 </button>
+
+  
+<button
+  onClick={() => {
+    setCart([...cart, product])
+    console.log("Product added:", product);
+  }}
+  className="rounded-xl bg-blue-600 px-4 py-3 font-semibold text-white hover:bg-blue-700"
+>
+  Add to Cart
+</button>
+
+
         </div>
       </div>
     </div>
