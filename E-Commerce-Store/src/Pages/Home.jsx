@@ -1,19 +1,22 @@
 
 import { useNavigate } from "react-router-dom";
 import heroImage from "../assets/hero image.png";
-import Products from "./Products";
 
 
 
-export default function Home({ products, error,loading , search}) {
+export default function Home({ products, error, loading, search }) {
   const navigate = useNavigate();
-   const filteredProducts = products.filter((product) =>
-  product.title.toLowerCase().includes(search.toLowerCase())
-);
 
-if(!Products){
-  return <p>Products not Found!</p>
-}
+   const filteredProducts = (products || [])
+    .filter((product) =>
+      product.title.toLowerCase().includes((search || "").toLowerCase())
+    )
+    .slice(0, 8);
+  
+
+
+
+
   return (
     <>
       {/* Hero */}
@@ -25,6 +28,8 @@ if(!Products){
         />
 
         <div className="absolute inset-0 bg-black/40"></div>
+
+
 
         <div className="relative z-10 flex h-full items-center px-10 md:px-16">
           <div className="max-w-xl text-white">
