@@ -139,7 +139,7 @@ export default function Home({ products, error, loading, search }) {
               </button>
           </div>
         </div>
-      </div>
+      </div> 
     ))}
   </div>
 

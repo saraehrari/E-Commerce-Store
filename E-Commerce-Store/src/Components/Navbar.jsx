@@ -11,7 +11,7 @@ export default function Navbar({search, setSearch}) {
         ? "bg-blue-50 text-blue-600"
         : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
     }`;
-
+ 
   return (
     <nav className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">

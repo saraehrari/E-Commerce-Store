@@ -106,7 +106,7 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-
+ 
         {/* Bottom Bar */}
         <div className="mt-8 flex flex-col items-center gap-3 border-t border-blue-200 pt-5 text-center sm:mt-10 md:flex-row md:justify-between md:text-left">
           <p className="text-xs leading-5 text-slate-500 sm:text-sm">
