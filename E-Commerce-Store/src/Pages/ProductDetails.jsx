@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
-import Cards from "../Components/Cards";
-import Cart from "./Cart";
+
+
 
 export default function ProductDetails({ products, loading,cart, setCart }) {
   const { id } = useParams();
@@ -71,7 +71,7 @@ const navigate = useNavigate();
 <button
   onClick={() => {
     setCart([...cart, product])
-    console.log("Product added:", product);
+   
   }}
   className="rounded-xl bg-blue-600 px-4 py-3 font-semibold text-white hover:bg-blue-700"
 >
