@@ -37,10 +37,7 @@ export default function Navbar({search, setSearch}) {
           <NavLink to="/products" className={navClass}>
             Products
           </NavLink>
-
-          <NavLink to="/categories" className={navClass}>
-            Categories
-          </NavLink>
+          
         </div>
 
         {/* Actions */}
