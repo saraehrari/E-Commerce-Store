@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 
 import Home from "./Pages/Home";
@@ -8,7 +8,6 @@ import Products from "./Pages/Products";
 import ProductDetails from "./Pages/ProductDetails";
 import Cart from "./Pages/Cart";
 import Checkout from "./Pages/Checkout";
-import Categories from './Pages/Categories'
 import Footer from "./Components/Footer";
 
 
@@ -92,9 +91,6 @@ const [cart, setCart] = useState([]);
               />
             }
           />
-
-
-          <Route path="/categories" element={<Categories/>}/>
          <Route
   path="/cart"
   element={<Cart cart={cart} setCart={setCart} />}
