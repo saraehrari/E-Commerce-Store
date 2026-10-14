@@ -89,19 +89,17 @@ const [cart, setCart] = useState([]);
                 setCart={setCart}
 
               />
-            }
-          />
-         <Route
-  path="/cart"
-  element={<Cart cart={cart} setCart={setCart} />}
-/>
-
-          <Route path="/checkout" element={<Checkout />} />
+               }
+              />
+               <Route
+                path="/cart"
+                element={<Cart cart={cart} setCart={setCart} />}
+                        />
+               <Route path="/checkout" element={<Checkout />} />
         
-        </Routes>
+         </Routes>
       </main>
 
       <Footer/>
-    
 </div>
   )};
