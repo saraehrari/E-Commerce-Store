@@ -78,16 +78,15 @@ export default function Products({products, error, loading, search}){
   {/* Section Header */}
   <div className="mx-auto mb-12 max-w-2xl text-center">
     <span className="mb-3 inline-block rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-600">
-      Our Collection
+      Explore Our Collection
     </span>
 
     <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-      Discover Our Products
+     Find Products that you Love
     </h2>
 
     <p className="mt-4 text-gray-500">
-      Explore our collection of quality products at great prices.
-      Find something you love today.
+      Discover handpicked products that combine quality, style, and value. Explore our collection and find your next favorite with ShopHub.
     </p>
   </div>
 

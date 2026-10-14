@@ -65,9 +65,20 @@ const [cart, setCart] = useState([]);
             }
           />
 
-          <Route path="/about" element={<Aboutus />} />
+          <Route path="/about" element={
+            <Aboutus
+             
+          />} />
 
-          <Route path="/products" element={<Products />} />
+          <Route path="/products" element={
+            <Products 
+            products={products}
+                error={error}
+                loading={loading}
+                search={search}
+            
+            
+            />} />
 
           <Route
             path="/products/:id"
