@@ -59,7 +59,7 @@ const navigate = useNavigate();
           </p>
 
          <button
-        onClick={() => navigate("/")}
+        onClick={() => navigate("/products")}
         className="flex-1 rounded-xl border border-gray-300
     bg-white px-4 py-3 font-semibold text-gray-700
     transition hover:bg-gray-100 mb-4"
